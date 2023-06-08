@@ -116,12 +116,6 @@
 </div>
 
 <style>
-	.section {
-		height: 100vh;
-		border: 4px solid #ffffff;
-		position: relative;
-	}
-
 	.container {
 		background-color: black;
 		width: 100%;
@@ -129,6 +123,12 @@
 		padding: 50px 200px;
 		z-index: 1;
 		position: relative;
+	}
+
+	.section {
+		height: 100vh;
+		position: relative;
+		max-width: 2000px;
 	}
 
 	header {
@@ -345,5 +345,118 @@
 		bottom: 0px;
 		left: -200px;
 		position: absolute;
+	}
+
+	@media screen and (max-width: 428px) {
+		.container {
+			padding: 20px 20px;
+			max-width: 428px;
+		}
+
+		header {
+			grid-template-columns: 1fr 1fr;
+			height: 80px;
+			text-align: right;
+		}
+
+		.logo {
+			max-height: 100%;
+			width: 300px;
+			grid-column: 1;
+		}
+
+		.menu {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+
+		.time-header {
+			max-width: 420px;
+		}
+
+		.time-container {
+			display: flex;
+			flex-direction: column;
+			gap: 40px;
+			margin-top: 60px;
+
+			margin-bottom: 0px;
+		}
+
+		.time {
+			gap: 50px;
+			margin-bottom: 0px;
+		}
+
+		.highlights {
+			margin-top: 100px;
+			height: 800px;
+			max-width: 380px;
+			gap: 40px;
+		}
+
+		.about {
+			margin-top: 200px;
+			max-width: 380px;
+			height: 600px;
+			gap: 24px;
+		}
+
+		.newsletter {
+			max-width: 380px;
+			margin-top: 100px;
+		}
+
+		.input {
+			max-width: 400px;
+			height: max-content;
+			margin-top: 20px;
+		}
+
+		footer {
+			height: 250px;
+		}
+
+		footer .logo {
+			grid-column: 1;
+			grid-row: 1 / span 2;
+		}
+
+		.footer-menu {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 40px;
+			text-align: right;
+		}
+		.first-img {
+			height: 300px;
+			top: 100px;
+		}
+		.footer-social {
+			height: max-content;
+		}
+
+		.second-img {
+			height: 300px;
+			top: 500px;
+			left: 50px;
+		}
+
+		.third-img {
+			height: 400px;
+			left: -100px;
+			top: 200px;
+		}
+
+		.forth-img {
+			height: 300px;
+			top: 200px;
+		}
+
+		.fifth-img {
+			height: 400px;
+			left: -100px;
+		}
 	}
 </style>

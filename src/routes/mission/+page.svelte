@@ -104,18 +104,17 @@
 </div>
 
 <style>
-	.section {
-		height: 100vh;
-		border: 4px solid #ffffff;
-		position: relative;
-	}
-
 	.container {
 		background-color: black;
 		width: 100%;
 		height: 100%;
 		padding: 50px 200px;
 		z-index: 1;
+		position: relative;
+	}
+
+	.section {
+		height: 100vh;
 		position: relative;
 	}
 
@@ -168,7 +167,7 @@
 		display: flex;
 		flex-direction: column;
 		margin-top: 200px;
-		width: 800px;
+		max-width: 800px;
 		height: 600px;
 		gap: 24px;
 		margin-left: auto;
@@ -180,7 +179,7 @@
 		flex-direction: column;
 		margin-top: 300px;
 		height: 600px;
-		width: 800px;
+		max-width: 800px;
 		gap: 80px;
 	}
 
@@ -190,7 +189,7 @@
 		margin-top: 100px;
 		text-align: right;
 		height: 800px;
-		width: 800px;
+		max-width: 800px;
 		margin-left: auto;
 		gap: 80px;
 	}
@@ -206,7 +205,7 @@
 
 	.numbers-header {
 		margin-top: 200px;
-		width: 1000px;
+		max-width: 1000px;
 	}
 
 	.numbers-container {
@@ -290,5 +289,118 @@
 		right: -50px;
 		transform: rotate(45deg);
 		position: absolute;
+	}
+
+	@media screen and (max-width: 428px) {
+		.container {
+			padding: 20px 20px;
+			max-width: 428px;
+		}
+
+		header {
+			grid-template-columns: 1fr 1fr;
+			height: 80px;
+			text-align: right;
+		}
+
+		.logo {
+			max-height: 100%;
+			width: 300px;
+			grid-column: 1;
+		}
+
+		.menu {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+
+		.hero {
+			max-width: 380px;
+		}
+
+		.first-paragraph {
+			margin-top: 100px;
+			height: 400px;
+			max-width: 380px;
+			gap: 40px;
+		}
+
+		.second-paragraph {
+			margin-top: -300px;
+			max-width: 380px;
+			gap: 40px;
+		}
+
+		.third-paragraph {
+			margin-top: 0px;
+			max-width: 380px;
+			gap: 40px;
+		}
+
+		.numbers-header {
+			margin-top: -300px;
+			max-width: 380px;
+		}
+
+		.numbers-container {
+			display: flex;
+			flex-direction: column;
+			gap: 40px;
+			margin-top: 60px;
+
+			margin-bottom: 0px;
+		}
+
+		.numbers {
+			gap: 20px;
+			margin-bottom: 0px;
+		}
+
+		footer {
+			height: 250px;
+			margin-top: -300px;
+		}
+
+		footer .logo {
+			grid-column: 1;
+			grid-row: 1 / span 2;
+		}
+
+		.footer-menu {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 40px;
+			text-align: right;
+		}
+
+		.footer-social {
+			height: max-content;
+		}
+
+		.first-img {
+			height: 300px;
+			top: 500px;
+			left: -100px;
+		}
+
+		.second-img {
+			height: 300px;
+			top: 700px;
+			left: -10px;
+			right: auto;
+			width: 100v;
+		}
+
+		.third-img {
+			height: 250px;
+			top: 400px;
+		}
+
+		.forth-img {
+			height: 250px;
+			top: -200px;
+			right: 0px;
+		}
 	}
 </style>
