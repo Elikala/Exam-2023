@@ -8,14 +8,29 @@
 	import { Instagram } from 'lucide-svelte';
 	import { Twitter } from 'lucide-svelte';
 	import { Facebook } from 'lucide-svelte';
+	import { goto } from '$app/navigation';
 </script>
 
 <div class="container">
 	<div class="section">
 		<header>
-			<img class="logo" src={bigLogo} alt="bigLogo" />
+			<img
+				class="logo"
+				src={bigLogo}
+				alt="bigLogo"
+				on:click={() => {
+					goto('/');
+				}}
+			/>
+
 			<div class="menu">
-				<li><a href="#"><p>Home</p></a></li>
+				<li>
+					<a
+						on:click={() => {
+							goto('/');
+						}}><p>Home</p></a
+					>
+				</li>
 				<li><a href="#"><p>About mission</p></a></li>
 				<li><a href="#"><p>Contact</p></a></li>
 			</div>
@@ -91,8 +106,22 @@
 	<footer>
 		<img class="logo" src={bigLogo} alt="bigLogo" />
 		<div class="footer-menu">
-			<p>Home</p>
-			<p>About mission</p>
+			<p
+				on:click={() => {
+					goto('/');
+				}}
+				on:keydown
+			>
+				Home
+			</p>
+			<p
+				on:click={() => {
+					goto('/mission');
+				}}
+				on:keydown
+			>
+				About mission
+			</p>
 			<p>Contact</p>
 		</div>
 		<div class="footer-social">
@@ -116,6 +145,7 @@
 	.section {
 		height: 100vh;
 		position: relative;
+		max-width: 2000px;
 	}
 
 	header {
@@ -231,7 +261,7 @@
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 1fr;
 		height: 200px;
-		width: 100%;
+		max-width: 2000px;
 		margin-top: 40px;
 	}
 
@@ -260,6 +290,7 @@
 
 	img {
 		object-fit: cover;
+		z-index: -2;
 	}
 
 	.first-img {
@@ -273,12 +304,10 @@
 		width: 100%;
 		position: absolute;
 		top: 500px;
-		left: -200px;
-		z-index: 2;
 	}
 
 	.third-img {
-		height: 1000px;
+		width: 200vh;
 		position: absolute;
 		top: 500px;
 	}
@@ -398,9 +427,9 @@
 		}
 
 		.forth-img {
-			height: 250px;
+			height: 280px;
 			top: -200px;
-			right: 0px;
+			left: 0px;
 		}
 	}
 </style>

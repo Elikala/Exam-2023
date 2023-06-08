@@ -9,6 +9,7 @@
 	import { Instagram } from 'lucide-svelte';
 	import { Twitter } from 'lucide-svelte';
 	import { Facebook } from 'lucide-svelte';
+	import { goto } from '$app/navigation';
 </script>
 
 <div class="container">
@@ -16,16 +17,33 @@
 		<header>
 			<img class="logo" src={bigLogo} alt="bigLogo" />
 			<ul class="menu">
-				<li><a href="#"><p>Home</p></a></li>
-				<li><a href="#"><p>About mission</p></a></li>
-				<li><a href="#"><p>Contact</p></a></li>
+				<li>
+					<a
+						on:click={() => {
+							goto('/');
+						}}
+						><p>Home</p>
+					</a>
+				</li>
+				<li>
+					<a
+						on:click={() => {
+							goto('/mission');
+						}}><p>About mission</p></a
+					>
+				</li>
+				<li><a><p>Contact</p></a></li>
 			</ul>
 		</header>
 
 		<div class="hero">
 			<h1>Europa Clipper</h1>
 			<p>A mission to Jupiter's icy moon</p>
-			<button>
+			<button
+				on:click={() => {
+					goto('/mission');
+				}}
+			>
 				<p>About mission</p>
 			</button>
 		</div>
@@ -35,20 +53,20 @@
 	</div>
 	<div class="section">
 		<div class="time-header">
-			<h2>NASA's Europa Clipper mission will launch in</h2>
+			<h2>NASA's Europa Clipper mission will launch in October 1st 2024</h2>
 
 			<div class="time-container">
 				<div class="time">
-					<h1>32</h1>
-					<p>Month's</p>
+					<h1>1</h1>
+					<p>Years</p>
 				</div>
 				<div class="time">
-					<h1>32</h1>
-					<p>Month's</p>
+					<h1>3</h1>
+					<p>Months</p>
 				</div>
 				<div class="time">
-					<h1>32</h1>
-					<p>Month's</p>
+					<h1>22</h1>
+					<p>Day</p>
 				</div>
 			</div>
 		</div>
@@ -78,7 +96,11 @@
 		<div class="about">
 			<h2>About this mission</h2>
 			<p>Read more details about Europa Clipper misson</p>
-			<button><p>Read more</p></button>
+			<button
+				on:click={() => {
+					goto('/mission');
+				}}><p>Read more</p></button
+			>
 		</div>
 
 		<img class="forth-img" src={moon_3} alt="Half moon brown" />
@@ -103,8 +125,22 @@
 	<footer>
 		<img class="logo" src={bigLogo} alt="bigLogo" />
 		<div class="footer-menu">
-			<p>Home</p>
-			<p>About mission</p>
+			<p
+				on:click={() => {
+					goto('/');
+				}}
+				on:keydown
+			>
+				Home
+			</p>
+			<p
+				on:click={() => {
+					goto('/mission');
+				}}
+				on:keydown
+			>
+				About mission
+			</p>
 			<p>Contact</p>
 		</div>
 		<div class="footer-social">
@@ -226,7 +262,7 @@
 	.highlights {
 		display: flex;
 		flex-direction: column;
-		margin-top: 200px;
+		margin-top: 0px;
 		text-align: right;
 		height: 800px;
 		max-width: 1000px;
@@ -430,7 +466,8 @@
 			text-align: right;
 		}
 		.first-img {
-			height: 300px;
+			height: 250px;
+			left: 0px;
 			top: 100px;
 		}
 		.footer-social {
@@ -438,9 +475,9 @@
 		}
 
 		.second-img {
-			height: 300px;
+			height: 250px;
 			top: 500px;
-			left: 50px;
+			left: 0px;
 		}
 
 		.third-img {
@@ -452,6 +489,8 @@
 		.forth-img {
 			height: 300px;
 			top: 200px;
+			right: 0px;
+			position: absolute;
 		}
 
 		.fifth-img {
