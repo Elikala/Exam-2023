@@ -1,0 +1,26 @@
+h1 {
+    font-family: 'Lato';
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 96px;
+    line-height: 125%;
+}
+
+h2 {
+    font-family: 'Lato';
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 130%;
+}
+
+p {
+    font-family: 'Lato';
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 135%;
+}
